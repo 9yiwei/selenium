@@ -24,3 +24,4 @@ class LoggedInSuccessfullyPage(BasePage):
     # 此為檢查該button是否存在，是一個動作/一瞬間的事，故不適合使用property
     def is_logout_btn_displayed(self) -> bool:
         return self.is_displayed(self.__logout_locator)
+

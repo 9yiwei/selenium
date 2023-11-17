@@ -10,6 +10,7 @@ class LoginPage(BasePage):
     __username_field = (By.ID, "username")
     __password_field = (By.ID, "password")
     __submit_btn = (By.XPATH, "//button[@class='btn']")
+    __error_msg = (By.ID, "error")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -21,6 +22,9 @@ class LoginPage(BasePage):
         self.type(self.__username_field, username)
         self.type(self.__password_field, password)
         self.click(self.__submit_btn)
+
+    def get_error_msg(self) -> str:
+        return self.get_text(self.__error_msg, time=3)
 
         # wait = WebDriverWait(self.driver, 10)
         # # 輸入username
