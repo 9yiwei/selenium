@@ -21,7 +21,7 @@ class BasePage:
 
     def _visibility_of_element_wait(self, locator: tuple, time: int = 10,):
         wait = WebDriverWait(self.driver, time)
-        wait.until(ec.visibility_of_element_located(self._find(locator)))
+        wait.until(ec.visibility_of_element_located(locator))
 
     @property
     def current_url(self) -> str:

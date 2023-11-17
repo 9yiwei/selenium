@@ -18,8 +18,8 @@ class LoginPage(BasePage):
         self.open_url(self.__url)
 
     def execute_login(self, username, password):
-        self.type(self.__username_field)
-        self.type(self.__password_field)
+        self.type(self.__username_field, username)
+        self.type(self.__password_field, password)
         self.click(self.__submit_btn)
 
         # wait = WebDriverWait(self.driver, 10)
